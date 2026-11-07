@@ -23,5 +23,5 @@ Fechas (hora de Málaga): entrega hasta el 22 de diciembre de 2026 a las 21:00. 
 ## Riesgos conocidos
 
 - Rovo tiene que estar activado en el sitio del jurado para probar el agente. En los sitios de desarrollo viene incluido; en el texto de la entrega se explica que el resto de la app funciona sin Rovo.
-- `forge lint` y el id de la app solo se pueden comprobar con sesión iniciada (paso 3). Hasta entonces el manifest tiene `REPLACE-WITH-FORGE-REGISTER`. La CLI va fijada a 14.2.0 porque la 15 exige Node 24.22.1 o superior y esta máquina tiene 24.16; si actualizas Node, se puede subir.
+- `forge lint` y el id de la app solo se pueden comprobar con sesión iniciada (paso 3). Hasta entonces el manifest tiene `REPLACE-WITH-FORGE-REGISTER`. Node se actualizó a 24.22.1 el 7 de noviembre para poder usar la CLI 15.
 - La UI usa UI Kit (sin bundler propio). Si algún componente no se comporta como en la documentación, se ajusta al probar en el sitio.
