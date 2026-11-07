@@ -1,0 +1,6 @@
+allowBuilds:
+  "@forge/cli": true
+  keytar: true
+  cloudflared: true
+  iframe-resizer: true
+nodeLinker: hoisted

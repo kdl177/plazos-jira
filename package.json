@@ -1,0 +1,25 @@
+{
+  "name": "plazos-jira",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Court deadlines for Jira: Spanish procedural deadlines (art. 183 LOPJ) computed, confirmed and watched inside the issue.",
+  "scripts": {
+    "test": "node --test src/*.test.js",
+    "lint": "forge lint",
+    "deploy": "forge deploy",
+    "tunnel": "forge tunnel"
+  },
+  "dependencies": {
+    "@forge/api": "^8.4.0",
+    "@forge/bridge": "^7.2.1",
+    "@forge/kvs": "^2.1.1",
+    "@forge/react": "^12.4.0",
+    "@forge/resolver": "^2.0.2",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@forge/cli": "^14.2.0",
+    "typescript": "^5.9.3"
+  }
+}
