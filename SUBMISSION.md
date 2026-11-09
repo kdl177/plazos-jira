@@ -1,6 +1,6 @@
 # Devpost submission texts (English, paste as they are)
 
-Fill `[INSTALL LINK]`, `[YOUTUBE URL]` and `[REPO URL]` before submitting.
+Fill `[YOUTUBE URL]` before submitting. The repo is private: make it public (or add the judges) before Submit if the source link is required.
 
 ## Project name
 
@@ -46,9 +46,9 @@ The app is built on Forge and integrates with Jira (issue panel, project setting
 
 ## Links
 
-- Installation link for judges: `[INSTALL LINK]`
+- Installation link for judges: https://developer.atlassian.com/console/install/252c9fc9-2160-4557-8138-775e3ad9a04b?signature=AYABePgAEkwnWGb8KAaMtxcz0M0AAAADAAdhd3Mta21zAEthcm46YXdzOmttczp1cy13ZXN0LTI6NzA5NTg3ODM1MjQzOmtleS83MDVlZDY3MC1mNTdjLTQxYjUtOWY5Yi1lM2YyZGNjMTQ2ZTcAuAECAQB4CxqLTo9l4lqXuFjNim1xJM%2Bp%2F3TVP9xHS2BrU5DRRucB6BtUm%2BHjnP4PAt6IVubV2gAAAH4wfAYJKoZIhvcNAQcGoG8wbQIBADBoBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDNauoA6mUmGEMGPsXwIBEIA7qyCkAK0EK6AclsqtKYRhCQtOPKtQViWty1ss%2FUTAGgo%2FemPMFxDnEdQflyz4TEAGG5i20qaHLy28Bq4AB2F3cy1rbXMAS2Fybjphd3M6a21zOmV1LXdlc3QtMTo3MDk1ODc4MzUyNDM6a2V5LzQ2MzBjZTZiLTAwYzMtNGRlMi04NzdiLTYyN2UyMDYwZTVjYwC4AQICAHi9bVMAkme4qVQX1fQHo6ePw3H40A7cGfz7yrmSfBWMXgHVggt10LW1LdJu2HbIMEIGAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQM1OhCuO7y2Sm%2Bjm%2F%2FAgEQgDuvkwX8bk%2FJsKAMHqHqgLVaW2WkFqzcrMFUcjNPq8lCnVl9pnuR9OmbraCyou3GpP2%2Bs%2B5dLR6t7dJLggAHYXdzLWttcwBLYXJuOmF3czprbXM6dXMtZWFzdC0xOjcwOTU4NzgzNTI0MzprZXkvNmMxMjBiYTAtNGNkNS00OTg1LWI4MmUtNDBhMDQ5NTJjYzU3ALgBAgIAeDYASx0XCjkny4iLV6vz%2BKtEGSGT6kdt0QRpkn6D%2FlVEASiK%2Ffb61unZXQufMv2Dtw8AAAB%2BMHwGCSqGSIb3DQEHBqBvMG0CAQAwaAYJKoZIhvcNAQcBMB4GCWCGSAFlAwQBLjARBAzlR%2B%2F7ajofn%2F3HDr4CARCAO8UiBP5fnLcUNEhLZzAXIMGyKHwvRDnNMQcBTB8bMGIeUpKt5H42Ax4ZI77ZfkGfQcZazuSWN5NBLdIGAgAAAAAMAAAQAAAAAAAAAAAAAAAAAGhfz3F%2FiDM%2BOjSqCoWLU5%2F%2F%2F%2F%2F%2FAAAAAQAAAAAAAAAAAAAAAQAAADKDZYCyKsDVrCzIO%2B%2BqkZ%2BM%2BJgWrpNX4fpddLZIrvPQ0Nzt8FiufWSPQrVN5o%2FsS6JZZZleGXCkmCfV9NQ%2BAmeNXU4%3D&product=jira
 - Demo video: `[YOUTUBE URL]`
-- Source: `[REPO URL]`
+- Source: https://github.com/kdl177/plazos-jira
 - Testing instructions: see README.md, section "Testing instructions for judges".
 
 ## Built with
