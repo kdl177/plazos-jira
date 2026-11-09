@@ -2,7 +2,6 @@
   "name": "plazos-jira",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "description": "Court deadlines for Jira: Spanish procedural deadlines (art. 183 LOPJ) computed, confirmed and watched inside the issue.",
   "scripts": {
     "test": "node --test src/*.test.js",
