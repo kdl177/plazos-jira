@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ForgeReconciler, {
-  Box, Button, ButtonGroup, DatePicker, Form, FormFooter, FormSection, Inline, Label, Lozenge,
+  Box, Button, ButtonGroup, DatePicker, ErrorMessage, Form, FormFooter, FormSection, Inline, Label, Lozenge,
   SectionMessage, Select, Stack, Strong, Text, Textfield, Toggle, useForm,
 } from '@forge/react';
 import { invoke } from '@forge/bridge';
@@ -17,9 +17,9 @@ const leftLabel = (r) =>
   r.level === 'overdue' ? `Overdue by ${-r.days} days` : r.days === 0 ? 'Expires today' : `${r.days} days left`;
 
 const DeadlineForm = ({ onSubmit }) => {
-  const { getFieldId, register, handleSubmit } = useForm();
+  const { getFieldId, register, handleSubmit, formState: { errors } } = useForm();
   const submit = (data) => onSubmit({
-    notified: data.notified, amount: Number(data.amount), unit: data.unit?.value ?? data.unit, urgent: !!data.urgent,
+    notified: data.notified, amount: Number(data.amount), unit: data.unit?.value ?? data.unit ?? UNITS[0].value, urgent: !!data.urgent,
   });
   return (
     <Form onSubmit={handleSubmit(submit)}>
@@ -29,15 +29,17 @@ const DeadlineForm = ({ onSubmit }) => {
           <Box>
             <Label labelFor={getFieldId('notified')}>Notification date</Label>
             <DatePicker {...register('notified', { required: true })} />
+            {errors.notified && <ErrorMessage>Pick the notification date</ErrorMessage>}
           </Box>
           <Inline space="space.150" shouldWrap>
             <Box>
               <Label labelFor={getFieldId('amount')}>Amount</Label>
               <Textfield type="number" {...register('amount', { required: true, min: 1 })} />
+              {errors.amount && <ErrorMessage>Enter 1 or more</ErrorMessage>}
             </Box>
             <Box>
               <Label labelFor={getFieldId('unit')}>Unit</Label>
-              <Select options={UNITS} {...register('unit', { required: true })} />
+              <Select options={UNITS} defaultValue={UNITS[0]} {...register('unit')} />
             </Box>
           </Inline>
           <Box>
