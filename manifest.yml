@@ -17,26 +17,31 @@ modules:
   rovo:agent:
     - key: plazos-agent
       name: Deadline Clerk
-      description: Computes Spanish procedural deadlines (art. 183 LOPJ) and reports which case deadlines in Jira are close or overdue.
+      description: Computes Spanish procedural deadlines (art. 183 LOPJ) and reports
+        which case deadlines in Jira are close or overdue.
       prompt: >
-        You are the deadline clerk of a Spanish law firm that tracks its cases in Jira.
-        You compute procedural deadlines under art. 183 LOPJ and report which case deadlines are close.
+        You are the deadline clerk of a Spanish law firm that tracks its cases
+        in Jira. You compute procedural deadlines under art. 183 LOPJ and report
+        which case deadlines are close.
 
         Jobs:
 
-        a. Compute a deadline. You need the notification date (YYYY-MM-DD), the amount and the unit
-        (business days, calendar days or months). Ask for whatever is missing. Treat the matter as
-        urgent only when the user says so. Call compute-deadline, passing the project key from the
-        context when there is one so the project's regional and local holidays apply. Reply with the
-        date, the rule applied and a reminder that the lawyer must confirm it in the issue's
-        "Court deadline" panel.
+        a. Compute a deadline. You need the notification date (YYYY-MM-DD), the
+        amount and the unit (business days, calendar days or months). Ask for
+        whatever is missing. Treat the matter as urgent only when the user says
+        so. Call compute-deadline, passing the project key from the context when
+        there is one so the project's regional and local holidays apply. Reply
+        with the date, the rule applied and a reminder that the lawyer must
+        confirm it in the issue's "Court deadline" panel.
 
-        b. List upcoming deadlines. Call list-deadlines with the project key from the context and the
-        number of days the user asks for (default 7). Reply with a table: issue, due date, days left,
-        confirmed. Overdue deadlines go first.
+        b. List upcoming deadlines. Call list-deadlines with the project key
+        from the context and the number of days the user asks for (default 7).
+        Reply with a table: issue, due date, days left, confirmed. Overdue
+        deadlines go first.
 
-        Guardrails: never invent or compute a date yourself; every date comes from an action.
-        Write dates as YYYY-MM-DD. Do not give legal advice beyond the computation rules.
+        Guardrails: never invent or compute a date yourself; every date comes
+        from an action. Write dates as YYYY-MM-DD. Do not give legal advice
+        beyond the computation rules.
       conversationStarters:
         - Which court deadlines expire this week?
         - Compute a 20 business-day deadline from a notification received today
@@ -50,8 +55,9 @@ modules:
       function: computeDeadline
       actionVerb: GET
       description: >
-        Computes the last day of a Spanish procedural deadline (art. 183 LOPJ) from a notification date,
-        an amount and a unit, applying the project's extra holidays. Returns the date and the rule applied.
+        Computes the last day of a Spanish procedural deadline (art. 183 LOPJ)
+        from a notification date, an amount and a unit, applying the project's
+        extra holidays. Returns the date and the rule applied.
       inputs:
         notified:
           title: Notification date
@@ -67,12 +73,14 @@ modules:
           title: Unit
           type: string
           required: true
-          description: One of business (días hábiles), calendar (días naturales) or months (meses).
+          description: One of business (días hábiles), calendar (días naturales) or months
+            (meses).
         urgent:
           title: Urgent matter
           type: string
           required: false
-          description: Set to true when the matter is urgent, so August and the Christmas break count as working days.
+          description: Set to true when the matter is urgent, so August and the Christmas
+            break count as working days.
         projectKey:
           title: Project key
           type: string
@@ -83,14 +91,16 @@ modules:
       function: listDeadlines
       actionVerb: GET
       description: >
-        Lists the court deadlines stored by the app that expire within a number of days, or are already
-        overdue, with their issue key, due date, days left and whether the lawyer confirmed them.
+        Lists the court deadlines stored by the app that expire within a number
+        of days, or are already overdue, with their issue key, due date, days
+        left and whether the lawyer confirmed them.
       inputs:
         days:
           title: Days ahead
           type: string
           required: false
-          description: Only deadlines due within this many days (default 7). Overdue ones are always included.
+          description: Only deadlines due within this many days (default 7). Overdue ones
+            are always included.
         projectKey:
           title: Project key
           type: string
@@ -122,4 +132,4 @@ permissions:
 app:
   runtime:
     name: nodejs24.x
-  id: ari:cloud:ecosystem::app/REPLACE-WITH-FORGE-REGISTER
+  id: ari:cloud:ecosystem::app/252c9fc9-2160-4557-8138-775e3ad9a04b
