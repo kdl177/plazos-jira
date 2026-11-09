@@ -8,7 +8,8 @@ const todayIso = () => new Date().toISOString().slice(0, 10);
 const holidaysKey = (projectKey) => `holidays:${projectKey}`;
 const deadlineKey = (issueKey) => `deadline:${issueKey}`;
 const getHolidays = async (projectKey) => (await kvs.get(holidaysKey(projectKey))) ?? [];
-const withStatus = (rec) => rec && { ...rec, ...status(rec.due, todayIso()) };
+// null, never undefined: the bridge turns an undefined return into {} on the frontend.
+const withStatus = (rec) => (rec ? { ...rec, ...status(rec.due, todayIso()) } : null);
 
 async function jira(path, body, method = 'PUT') {
   const res = await api.asApp().requestJira(path, {

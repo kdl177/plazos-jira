@@ -93,7 +93,7 @@ const App = () => {
   return (
     <Stack space="space.200">
       {error && <SectionMessage appearance="error"><Text>{error}</Text></SectionMessage>}
-      {rec ? <DeadlineView rec={rec} run={run} /> : <DeadlineForm onSubmit={(d) => run('setDeadline', d)} />}
+      {rec?.due ? <DeadlineView rec={rec} run={run} /> : <DeadlineForm onSubmit={(d) => run('setDeadline', d)} />}
     </Stack>
   );
 };
