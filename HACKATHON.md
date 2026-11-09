@@ -6,22 +6,23 @@ Fechas (hora de Málaga): entrega hasta el 22 de diciembre de 2026 a las 21:00. 
 
 ## Lo que haces tú (cuentas a tu nombre)
 
-1. Cuenta de Atlassian y sitio de desarrollo gratuito: https://go.atlassian.com/cloud-dev (elige Jira; tarda unos minutos en crearse).
-2. Token de API de Atlassian: https://id.atlassian.com/manage-profile/security/api-tokens → "Create API token". No me lo pases: lo usas tú en el paso 3.
-3. En `Apps/plazos-jira`, ejecuta `pnpm exec forge login` y pega tu email y el token. Queda guardado en tu equipo y a partir de ahí yo puedo registrar, desplegar e instalar la app.
-4. Cuenta en Devpost y apúntate al hackathon: https://codegeist2026.devpost.com/ (botón Join hackathon).
-5. Cuando la app esté desplegada: grabar o aprobar el vídeo (menos de 5 minutos, en YouTube público; el guion lo escribo yo) y pulsar Submit en Devpost con los textos que te dejo preparados.
+1. ~~Cuenta de Atlassian y sitio de desarrollo~~ Hecho el 8 de noviembre: hidralucasg45.atlassian.net.
+2. ~~Token de API~~ Hecho el 9 de noviembre. Está en el `.env` de SIMBAI como `FORGE_EMAIL` y `FORGE_API_TOKEN`; `scripts/env-sync.ps1` lo copia al entorno de Windows y Forge lo lee de ahí. Si caduca, se crea otro en https://id.atlassian.com/manage-profile/security/api-tokens y se repite ese paso.
+3. ~~forge login~~ No hace falta: con las variables del paso 2 la CLI ya tiene sesión.
+4. Cuenta en Devpost hecha el 8 de noviembre. Falta pulsar «Join hackathon» en https://codegeist2026.devpost.com/ si no lo has hecho.
+5. Registrar los plazos de los tres primeros expedientes de demo desde el panel «Court deadline» (la descripción de cada uno dice qué poner): DESP-1 vencido, DESP-2 próximo, DESP-3 confirmado. Es lo único que no puedo hacer por la API: el panel escribe en el almacenamiento de la app.
+6. Grabar o aprobar el vídeo (menos de 5 minutos, en YouTube público; el guion lo escribo yo) y pulsar Submit en Devpost con los textos que te dejo preparados.
 
 ## Lo que hago yo
 
-- App completa: motor de plazos con 11 pruebas, panel, ajustes de festivos, agente Rovo y aviso diario. Hecho el 5 de noviembre; falta probarla en un sitio real (necesita el paso 3).
-- Registro, despliegue e instalación en tu sitio de desarrollo, y el enlace de instalación para el jurado (Distribute → Start sharing).
-- Datos de demostración en el sitio: un proyecto "Despacho demo" con expedientes y plazos en los tres estados (vencido, a pocos días, confirmado).
+- App completa: motor de plazos con 11 pruebas, panel, ajustes de festivos, agente Rovo y aviso diario. Hecho el 5 de noviembre.
+- Registro, despliegue e instalación: hecho el 9 de noviembre. App `Plazos`, id `252c9fc9-2160-4557-8138-775e3ad9a04b`, Developer Space «SIMBAI», entorno development, instalada en Jira de hidralucasg45.atlassian.net (`forge lint` sin avisos). Consola: https://developer.atlassian.com/console/myapps/252c9fc9-2160-4557-8138-775e3ad9a04b. Falta el enlace de instalación para el jurado (Distribute → Start sharing), que exige desplegar a production.
+- Datos de demostración: proyecto `DESP` «Despacho demo» (Kanban, gestionado por el equipo) con cinco expedientes DESP-1 a DESP-5, creado el 9 de noviembre por la API. Los plazos los registra el usuario desde el panel (paso 5 de arriba).
 - Guion del vídeo y textos de la entrega (descripción, cómo cumple el requisito, categoría, premio extra).
 - Si da tiempo: publicar en el Marketplace (otro premio extra de 1.500 $; exige revisión de Atlassian, que tarda semanas, por eso va al final).
 
 ## Riesgos conocidos
 
 - Rovo tiene que estar activado en el sitio del jurado para probar el agente. En los sitios de desarrollo viene incluido; en el texto de la entrega se explica que el resto de la app funciona sin Rovo.
-- `forge lint` y el id de la app solo se pueden comprobar con sesión iniciada (paso 3). Hasta entonces el manifest tiene `REPLACE-WITH-FORGE-REGISTER`. Node se actualizó a 24.22.1 el 7 de noviembre para poder usar la CLI 15.
+- `forge register` pedía crear un Developer Space con un asistente interactivo que no funciona sin terminal; se resolvió lanzando la CLI desde Node con stdin/stdout marcados como TTY. Solo hace falta una vez. Node se actualizó a 24.22.1 el 7 de noviembre para poder usar la CLI 15.
 - La UI usa UI Kit (sin bundler propio). Si algún componente no se comporta como en la documentación, se ajusta al probar en el sitio.
