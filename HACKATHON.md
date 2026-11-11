@@ -12,7 +12,8 @@ Fechas (hora de Málaga): entrega hasta el 22 de diciembre de 2026 a las 21:00. 
 4. Cuenta en Devpost hecha el 8 de noviembre. Falta pulsar «Join hackathon» en https://codegeist2026.devpost.com/ si no lo has hecho.
 5. Registrar los plazos de los tres primeros expedientes de demo desde el panel «Court deadline» (la descripción de cada uno dice qué poner): DESP-1 vencido, DESP-2 próximo, DESP-3 confirmado. Es lo único que no puedo hacer por la API: el panel escribe en el almacenamiento de la app. Hecho el 9 de noviembre: DESP-1 vence 2026-10-14 (vencido), DESP-2 2026-11-24, DESP-3 2026-11-12.
    Después, en la consola de desarrollador (https://developer.atlassian.com/console/myapps/252c9fc9-2160-4557-8138-775e3ad9a04b), pestaña Distribute → Start sharing: genera el enlace de instalación que va en la entrega. Hecho el 9 de noviembre: estado «Sharing with anyone», contacto https://simbai.vercel.app/contacto, privacidad y aviso legal de simbai.vercel.app. Enlace de instalación copiado a SUBMISSION.md el 9 de noviembre.
-6. Grabar o aprobar el vídeo (menos de 5 minutos, en YouTube público; el guion lo escribo yo) y pulsar Submit en Devpost con los textos que te dejo preparados.
+6. El vídeo lo graba Luis (socio, habla inglés): se lo pedí por Gmail el 11 de noviembre con el guion, el acceso al Jira de la demo (usuario roldesluis@gmail.com, dado de alta ese día) y el repo, que es público desde ese día. Falta que mande la URL de YouTube.
+   Antes decía: grabar o aprobar el vídeo (menos de 5 minutos, en YouTube público; el guion lo escribo yo) y pulsar Submit en Devpost con los textos que te dejo preparados.
 
 ## Lo que hago yo
 
